@@ -3,36 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Power Play - Module 1</title>
+<title>Module 3 - Exponential Growth</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="sky">
-<h1>🌸 Power Play 🌸</h1>
-<h2>A Magical Journey into Exponential Growth</h2>
-<p><strong>Developed by</strong><br>Mrs. Pooja Ahlawat<br>TGT Mathematics<br>Kendriya Vidyalaya Ambah</p>
-<div class="logo">[Place KVS Logo Here]</div>
-<button onclick="start()">Start Learning</button>
+<h1>📈 Exponential Growth Visualizer</h1>
+
+<div class="controls">
+<label>Day:
+<input type="range" id="day" min="1" max="10" value="1" oninput="draw()">
+<span id="d">1</span>
+</label>
 </div>
 
-<section id="lesson" class="hidden">
-<h2>Welcome to the Magic Pond</h2>
-<p>A magical pond has one lotus today. Every day, the number of lotus flowers doubles. Can you predict what happens after many days?</p>
+<canvas id="graph" width="700" height="350"></canvas>
 
-<h3>Learning Outcomes</h3>
-<ul>
-<li>Understand repeated multiplication.</li>
-<li>Relate doubling to powers.</li>
-<li>Predict exponential growth.</li>
-</ul>
+<div class="formula">
+<h2>Pattern</h2>
+<p id="formula"></p>
+</div>
 
-<h3>Warm-up</h3>
-<p>2 × 2 × 2 = ?</p>
-<button onclick="check(6)">6</button>
-<button onclick="check(8)">8</button>
-<button onclick="check(12)">12</button>
-<p id="msg"></p>
-</section>
+<div class="quiz">
+<h2>Quick Challenge</h2>
+<p>How many lotus flowers are there on Day 6?</p>
+<button onclick="check(16)">16</button>
+<button onclick="check(32)">32</button>
+<button onclick="check(64)">64</button>
+<p id="result"></p>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
