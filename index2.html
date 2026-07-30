@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Magic Pond Explorer</title>
+<link rel='stylesheet' href='style.css'></head>
+<body>
+<h1>🌸 Magic Pond Explorer 🌸</h1>
+<p>Move the slider to see how the lotus flowers double every day.</p>
+
+<label>Day: <span id='day'>1</span></label><br>
+<input type='range' min='1' max='10' value='1' id='slider' oninput='update()'>
+
+<div id='pond'></div>
+
+<p id='count'></p>
+
+<button onclick='autoPlay()'>▶ Play</button>
+<button onclick='stopPlay()'>⏸ Pause</button>
+
+<h2>Think!</h2>
+<p>If the pond is completely full on Day 30, on which day is it half full?</p>
+<button onclick='answer(28)'>Day 28</button>
+<button onclick='answer(29)'>Day 29</button>
+<button onclick='answer(30)'>Day 30</button>
+<p id='msg'></p>
+
+<script src='script.js'></script>
+</body></html>

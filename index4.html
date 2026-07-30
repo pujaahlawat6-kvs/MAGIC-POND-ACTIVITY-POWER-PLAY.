@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Module 4 - Challenge Zone</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<h1>🏆 Challenge Zone</h1>
+<p>Match each day with the correct number of lotus flowers.</p>
+
+<div class="cards">
+<div class="day" data-v="1">Day 1</div>
+<div class="day" data-v="2">Day 2</div>
+<div class="day" data-v="4">Day 3</div>
+<div class="day" data-v="8">Day 4</div>
+<div class="day" data-v="16">Day 5</div>
+</div>
+
+<div class="answers">
+<button onclick="guess(1)">1</button>
+<button onclick="guess(2)">2</button>
+<button onclick="guess(4)">4</button>
+<button onclick="guess(8)">8</button>
+<button onclick="guess(16)">16</button>
+</div>
+
+<h2 id="prompt"></h2>
+<p id="status"></p>
+<p>⭐ Score: <span id="score">0</span>/5</p>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(#74c0fc,#d0f4de);
+text-align:center;
+color:#143;
+}
+.sky{padding:60px;}
+button{
+padding:12px 24px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff69b4;
+color:white;
+cursor:pointer;
+margin:8px;
+}
+button:hover{transform:scale(1.05);}
+.hidden{display:none;padding:30px;}
+.logo{
+width:120px;
+height:120px;
+margin:auto;
+border:2px dashed #2b8a3e;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:white;
+}
