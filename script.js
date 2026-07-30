@@ -1,39 +1,31 @@
-const c=document.getElementById('graph');
-const ctx=c.getContext('2d');
-function draw(){
- let day=+document.getElementById('day').value;
- document.getElementById('d').textContent=day;
- document.getElementById('formula').textContent=
- 'Day '+day+': 2^('+(day-1)+') = '+Math.pow(2,day-1)+' lotus flowers';
- ctx.clearRect(0,0,c.width,c.height);
- ctx.beginPath();
- ctx.moveTo(40,320);
- ctx.lineTo(660,320);
- ctx.moveTo(40,320);
- ctx.lineTo(40,20);
- ctx.stroke();
- ctx.beginPath();
- for(let i=1;i<=10;i++){
-   let x=40+i*55;
-   let y=320-Math.pow(2,i-1)*2;
-   if(i==1)ctx.moveTo(x,y);
-   else ctx.lineTo(x,y);
-   ctx.fillText(i,x-3,338);
-   ctx.beginPath();
-   ctx.arc(x,y,3,0,Math.PI*2);
-   ctx.fill();
-   ctx.beginPath();
-   if(i>1){
-      let py=320-Math.pow(2,i-2)*2;
-      let px=40+(i-1)*55;
-      ctx.moveTo(px,py);
-      ctx.lineTo(x,y);
-      ctx.stroke();
-   }
+const qs=[
+{d:'Day 1',a:1},
+{d:'Day 2',a:2},
+{d:'Day 3',a:4},
+{d:'Day 4',a:8},
+{d:'Day 5',a:16}
+];
+let i=0,s=0;
+const prompt=document.getElementById('prompt');
+function show(){
+ if(i>=qs.length){
+   prompt.textContent='🎉 Excellent! Module Complete.';
+   status.textContent='Final Score: '+s+'/5';
+   return;
  }
+ prompt.textContent='How many lotus flowers on '+qs[i].d+'?';
+ status.textContent='';
 }
-function check(v){
- document.getElementById('result').textContent=
- v===32?'✅ Correct! Day 6 = 2⁵ = 32':'❌ Try again.';
+function guess(v){
+ if(i>=qs.length)return;
+ if(v===qs[i].a){
+   s++;
+   status.textContent='✅ Correct!';
+ }else{
+   status.textContent='❌ Correct answer: '+qs[i].a;
+ }
+ score.textContent=s;
+ i++;
+ setTimeout(show,700);
 }
-draw();
+show();
